@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CC490802E0B5AC2004E2B06 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1CC4907F2E0B5AC2004E2B06 /* Kingfisher */; };
-		1CC490832E0B5AD1004E2B06 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1CC490822E0B5AD1004E2B06 /* SnapKit */; };
+		1CDDDDED2E11E10200457222 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 1CDDDDEC2E11E10200457222 /* SnapKit */; };
+		1CDDDDF02E11E10B00457222 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 1CDDDDEF2E11E10B00457222 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1CC490712E0B5263004E2B06 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CC490162E0B4FA3004E2B06 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		1CC490282E0B4FA5004E2B06 /* Exceptions for "News" folder in "News" target */ = {
+		1CDDDDEA2E11E06E00457222 /* Exceptions for "News" folder in "News" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Resources/Info.plist,
@@ -29,7 +29,7 @@
 		1CC490182E0B4FA3004E2B06 /* News */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				1CC490282E0B4FA5004E2B06 /* Exceptions for "News" folder in "News" target */,
+				1CDDDDEA2E11E06E00457222 /* Exceptions for "News" folder in "News" target */,
 			);
 			path = News;
 			sourceTree = "<group>";
@@ -41,8 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CC490802E0B5AC2004E2B06 /* Kingfisher in Frameworks */,
-				1CC490832E0B5AD1004E2B06 /* SnapKit in Frameworks */,
+				1CDDDDF02E11E10B00457222 /* Kingfisher in Frameworks */,
+				1CDDDDED2E11E10200457222 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,8 +53,16 @@
 			isa = PBXGroup;
 			children = (
 				1CC490182E0B4FA3004E2B06 /* News */,
-				1CC490712E0B5263004E2B06 /* News.app */,
+				1CC490172E0B4FA3004E2B06 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		1CC490172E0B4FA3004E2B06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1CC490162E0B4FA3004E2B06 /* News.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,11 +85,11 @@
 			);
 			name = News;
 			packageProductDependencies = (
-				1CC4907F2E0B5AC2004E2B06 /* Kingfisher */,
-				1CC490822E0B5AD1004E2B06 /* SnapKit */,
+				1CDDDDEC2E11E10200457222 /* SnapKit */,
+				1CDDDDEF2E11E10B00457222 /* Kingfisher */,
 			);
 			productName = News;
-			productReference = 1CC490712E0B5263004E2B06 /* News.app */;
+			productReference = 1CC490162E0B4FA3004E2B06 /* News.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -109,11 +117,11 @@
 			mainGroup = 1CC4900D2E0B4FA3004E2B06;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				1CC4907E2E0B5AC2004E2B06 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				1CC490812E0B5AD1004E2B06 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1CDDDDEB2E11E10200457222 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				1CDDDDEE2E11E10B00457222 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 1CC4900D2E0B4FA3004E2B06;
+			productRefGroup = 1CC490172E0B4FA3004E2B06 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -155,8 +163,8 @@
 				INFOPLIST_FILE = News/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -187,8 +195,8 @@
 				INFOPLIST_FILE = News/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -352,15 +360,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		1CC4907E2E0B5AC2004E2B06 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 8.3.3;
-			};
-		};
-		1CC490812E0B5AD1004E2B06 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		1CDDDDEB2E11E10200457222 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -368,18 +368,26 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		1CDDDDEE2E11E10B00457222 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.3.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		1CC4907F2E0B5AC2004E2B06 /* Kingfisher */ = {
+		1CDDDDEC2E11E10200457222 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 1CC4907E2E0B5AC2004E2B06 /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
-		};
-		1CC490822E0B5AD1004E2B06 /* SnapKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 1CC490812E0B5AD1004E2B06 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 1CDDDDEB2E11E10200457222 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		1CDDDDEF2E11E10B00457222 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1CDDDDEE2E11E10B00457222 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

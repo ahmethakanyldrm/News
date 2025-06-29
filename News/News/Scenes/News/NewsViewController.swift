@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Kingfisher
 
 protocol NewsViewControllerProtocol: AnyObject {
     func reloadData()
