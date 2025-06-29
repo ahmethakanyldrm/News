@@ -27,7 +27,7 @@ final class NewsViewController: UIViewController {
     }()
     
     // MARK: Init
-    init(viewModel: NewsViewModel) {
+    init(viewModel: NewsViewModel = NewsViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
