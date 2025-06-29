@@ -8,10 +8,15 @@
 import UIKit
 import Kingfisher
 
-class NewsCell: UITableViewCell {
+protocol NewsCellDelegate: AnyObject {
+    func didTapShare(for url: String)
+}
+
+final class NewsCell: UITableViewCell {
     // MARK: - Properties
     static let identifier = "NewsCell"
     private var article: Article?
+    weak var delegate: NewsCellDelegate?
     
     // MARK: - UI Components
     private lazy var newsImageView: UIImageView = {
@@ -46,6 +51,15 @@ class NewsCell: UITableViewCell {
         return label
     }()
     
+    private lazy var moreButton: UIButton = {
+       let button = UIButton(type: .system)
+        let image = UIImage(systemName: "ellipsis.circle")
+        button.setImage(image, for: .normal)
+        button.tintColor = .systemGray
+        button.addTarget(self, action: #selector(didTapMore), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -69,6 +83,21 @@ extension NewsCell {
     }
 }
 
+// MARK: Objc methods
+@objc private extension NewsCell {
+    func didTapMore() {
+        guard let url = article?.url else {return}
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Haberi Paylaş", style: .default, handler: { _ in
+            self.delegate?.didTapShare(for: url)
+        }))
+        alert.addAction(UIAlertAction(title: "İptal", style: .cancel))
+        
+        parentViewController?.present(alert, animated: true)
+       
+    }
+}
+
 // MARK: - Private Methods
 private extension NewsCell {
  
@@ -82,6 +111,7 @@ private extension NewsCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(authorLabel)
         contentView.addSubview(dateLabel)
+        contentView.addSubview(moreButton)
     }
     
     func configureLayout() {
@@ -106,6 +136,12 @@ private extension NewsCell {
             make.leading.equalTo(newsImageView.snp_trailingMargin).offset(12)
             make.top.equalTo(authorLabel.snp_bottomMargin).offset(12)
             make.height.equalTo(24)
+        }
+        
+        moreButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview().offset(-12)
+            make.width.height.equalTo(24)
+            make.bottom.lessThanOrEqualToSuperview().offset(-12)
         }
         
     }

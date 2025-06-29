@@ -88,6 +88,7 @@ extension NewsViewController: UITableViewDataSource {
         }
         
         cell.configure(with: viewModel.articles[indexPath.row])
+        cell.delegate = self
         return cell
     }
     
@@ -128,5 +129,14 @@ extension NewsViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.search(term: "")
+    }
+}
+
+
+// MARK: - NewsCellDelegate
+extension NewsViewController: NewsCellDelegate {
+    func didTapShare(for url: String) {
+        let activity = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        present(activity, animated: true)
     }
 }
