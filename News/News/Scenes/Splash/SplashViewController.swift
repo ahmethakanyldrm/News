@@ -11,7 +11,7 @@ final class SplashViewController: UIViewController {
     // MARK: - Properties
     private let iconImage: UIImageView = {
        let imageview = UIImageView()
-        imageview.image = UIImage(named: "newspaper.fill")
+        imageview.image = UIImage(systemName: "newspaper.fill")
         imageview.contentMode = .scaleAspectFit
         imageview.translatesAutoresizingMaskIntoConstraints = false
         return imageview
