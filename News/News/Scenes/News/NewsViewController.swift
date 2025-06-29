@@ -23,6 +23,7 @@ final class NewsViewController: UIViewController {
         tableview.delegate = self
         tableview.dataSource = self
         tableview.register(NewsCell.self, forCellReuseIdentifier: NewsCell.identifier)
+        tableview.rowHeight = 200
         return tableview
     }()
     
@@ -57,6 +58,11 @@ extension NewsViewController: NewsViewControllerProtocol {
 extension NewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // detay sayfasına veri taşıma işlemi
+        let detailVM = DetailViewModel(article: viewModel.articles[indexPath.row])
+        let detailVC = DetailViewController(viewModel: detailVM)
+        navigationController?.pushViewController(detailVC, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
