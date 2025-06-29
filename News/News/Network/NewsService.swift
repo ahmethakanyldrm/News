@@ -24,8 +24,8 @@ final class NewsService: NewsServiceProtocol {
         var urlComponents = URLComponents(string: NetworkConstants.baseUrl + "top-headlines")
         urlComponents?.queryItems = [
             URLQueryItem(name: "country", value: country),
-            URLQueryItem(name: "page", value: String(page)),
             URLQueryItem(name: "pageSize", value: String(pageSize)),
+            URLQueryItem(name: "page", value: String(page)),
             URLQueryItem(name: "apiKey", value: NetworkConstants.apiKey)
         ]
         

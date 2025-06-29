@@ -49,6 +49,11 @@ extension NetworkManager: NetworkManagerProtocol {
                 return
             }
             
+            guard (200...299).contains(httpResponse.statusCode) else {
+                completion(.failure(.requestFailedWith(httpResponse.statusCode)))
+                return
+            }
+            
             guard let data = data else {
                 print("Data doğru gelmedi error var. Error eklenecek.....")
                 return
