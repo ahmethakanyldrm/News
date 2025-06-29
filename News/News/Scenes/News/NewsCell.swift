@@ -26,7 +26,7 @@ class NewsCell: UITableViewCell {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .headline)
-        label.numberOfLines = 0
+        label.numberOfLines = 2
         label.textColor = .label
         return label
     }()
@@ -64,7 +64,7 @@ extension NewsCell {
         self.article = article
         titleLabel.text = article.title
         authorLabel.text = article.author
-        dateLabel.text = article.publishedAt
+        dateLabel.text = article.publishedAt?.toReadableNewsDate()
         newsImageView.kf.setImage(with: URL(string: article.urlToImage ?? ""))
     }
 }
@@ -87,25 +87,25 @@ private extension NewsCell {
     func configureLayout() {
         newsImageView.snp.makeConstraints { make in
             make.top.leading.equalToSuperview().offset(16)
-            make.width.height.equalTo(200)
+            make.width.height.equalTo(160)
         }
         
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(16)
-            make.leading.equalTo(newsImageView.snp_trailingMargin).offset(16)
+            make.leading.equalTo(newsImageView.snp_trailingMargin).offset(12)
             make.trailing.equalToSuperview().offset(-16)
         }
         
         authorLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp_bottomMargin).offset(16)
-            make.leading.equalTo(newsImageView.snp_trailingMargin).offset(16)
+            make.top.equalTo(titleLabel.snp_bottomMargin).offset(12)
+            make.leading.equalTo(newsImageView.snp_trailingMargin).offset(12)
             make.trailing.equalToSuperview().offset(-16)
         }
         
         dateLabel.snp.makeConstraints { make in
-            make.leading.equalTo(newsImageView.snp_trailingMargin).offset(16)
-            make.top.equalTo(authorLabel.snp_bottomMargin).offset(16)
-            make.height.equalTo(24) 
+            make.leading.equalTo(newsImageView.snp_trailingMargin).offset(12)
+            make.top.equalTo(authorLabel.snp_bottomMargin).offset(12)
+            make.height.equalTo(24)
         }
         
     }
